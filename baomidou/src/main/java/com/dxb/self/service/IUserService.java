@@ -1,7 +1,7 @@
-package com.dxb.baomidou.service;
+package com.dxb.self.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.dxb.baomidou.entity.User;
+import com.dxb.self.entity.User;
 
 /**
  * <p>

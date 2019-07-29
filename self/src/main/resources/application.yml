@@ -1,0 +1,64 @@
+#  https://gitee.com/slzh/dynamic-datasource-spring-boot-starter
+#  https://github.com/baomidou/dynamic-datasource-spring-boot-starter
+spring:
+  datasource:
+    dynamic:
+      primary: ds1 #设置默认的数据源或者数据源组,默认值即为master
+      strict: false #设置严格模式,默认false不启动. 启动后在未匹配到指定数据源时候回抛出异常,不启动会使用默认数据源.
+      datasource:
+        ds1:
+          url: jdbc:mariadb://192.168.130.230:13306/multipledatasource?useUnicode=true&characterEncoding=UTF-8&useSSL=false #ENC(xxxxx)
+          username: root #ENC(xxxxx)
+          password: 123456 #ENC(xxxxx)
+          driver-class-name: org.mariadb.jdbc.Driver
+          schema: classpath:db/schema.sql  # 配置则生效,自动初始化表结构
+          data: classpath:db/data.sql # 配置则生效,自动初始化数据
+          continue-on-error: true # 默认true,初始化失败是否继续
+          druid:
+            initial-size: 5
+            max-active: 8
+            min-idle: 2
+            max-wait: -1
+            min-evictable-idle-time-millis: 30000
+            max-evictable-idle-time-millis: 30000
+            time-between-eviction-runs-millis: 0
+            validation-query: select 1
+            validation-query-timeout: -1
+            test-on-borrow: false
+            test-on-return: false
+            test-while-idle: true
+            pool-prepared-statements: true
+            max-open-prepared-statements: 100
+            filters: stat,wall
+            share-prepared-statements: true
+        ds2:
+          url: jdbc:mariadb://192.168.130.230:13306/multipledatasource?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+          username: root
+          password: 123456
+          driver-class-name: org.mariadb.jdbc.Driver
+          schema: classpath:db/schema.sql
+          data: classpath:db/data.sql
+          continue-on-error: true
+          druid:
+            initial-size: 5
+            max-active: 8
+            min-idle: 2
+            max-wait: -1
+            min-evictable-idle-time-millis: 30000
+            max-evictable-idle-time-millis: 30000
+            time-between-eviction-runs-millis: 0
+            validation-query: select 1
+            validation-query-timeout: -1
+            test-on-borrow: false
+            test-on-return: false
+            test-while-idle: true
+            pool-prepared-statements: true
+            max-open-prepared-statements: 100
+            filters: stat,wall
+            share-prepared-statements: true
+#mybatis-plus
+mybatis-plus:
+  mapper-locations: classpath:mapping/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    cache-enabled: true

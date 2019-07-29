@@ -1,11 +1,11 @@
-package com.dxb.baomidou.service.impl;
+package com.dxb.self.service.impl;
 
 import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.dynamic.datasource.toolkit.DynamicDataSourceContextHolder;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.dxb.baomidou.entity.User;
-import com.dxb.baomidou.mapper.UserMapper;
-import com.dxb.baomidou.service.IUserService;
+import com.dxb.self.entity.User;
+import com.dxb.self.mapper.UserMapper;
+import com.dxb.self.service.IUserService;
 import org.springframework.stereotype.Service;
 
 /**

@@ -1,8 +1,8 @@
-package com.dxb.baomidou.controller;
+package com.dxb.self.controller;
 
 
-import com.dxb.baomidou.entity.User;
-import com.dxb.baomidou.service.IUserService;
+import com.dxb.self.entity.User;
+import com.dxb.self.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;

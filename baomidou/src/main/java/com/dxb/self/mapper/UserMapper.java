@@ -1,7 +1,7 @@
-package com.dxb.baomidou.mapper;
+package com.dxb.self.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.dxb.baomidou.entity.User;
+import com.dxb.self.entity.User;
 
 /**
  * <p>
