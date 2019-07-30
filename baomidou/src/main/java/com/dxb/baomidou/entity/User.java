@@ -1,4 +1,4 @@
-package com.dxb.self.entity;
+package com.dxb.baomidou.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

@@ -1,8 +1,8 @@
-package com.dxb.self.controller;
+package com.dxb.baomidou.controller;
 
 
-import com.dxb.self.entity.User;
-import com.dxb.self.service.IUserService;
+import com.dxb.baomidou.entity.User;
+import com.dxb.baomidou.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,7 +29,7 @@ public class UserController {
 
     @GetMapping("/set")
     @Transactional
-    public List<User> getUsers() {
+    public List<User> setUsers() {
         User user = new User();
         user.setAge(new Random().nextInt(100));
         user.setEmail("ds1@ss.com");

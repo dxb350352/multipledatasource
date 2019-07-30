@@ -29,7 +29,7 @@ public class UserController {
 
     @GetMapping("/set")
     @Transactional
-    public List<User> getUsers() {
+    public List<User> setUsers() {
         User user = new User();
         user.setAge(new Random().nextInt(100));
         user.setEmail("ds1@ss.com");

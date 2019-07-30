@@ -1,8 +1,9 @@
 package com.dxb.self.service.impl;
 
-import com.baomidou.dynamic.datasource.annotation.DS;
-import com.baomidou.dynamic.datasource.toolkit.DynamicDataSourceContextHolder;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.dxb.self.aop.DataSource;
+import com.dxb.self.aop.DataSourceContextHolder;
+import com.dxb.self.aop.DataSourceEnum;
 import com.dxb.self.entity.User;
 import com.dxb.self.mapper.UserMapper;
 import com.dxb.self.service.IUserService;
@@ -17,20 +18,20 @@ import org.springframework.stereotype.Service;
  * @since 2019-07-26
  */
 @Service
-@DS("ds1")
+@DataSource(DataSourceEnum.DS1)
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
 
 
     @Override
     public void save1(User user) {
-        user.setName(DynamicDataSourceContextHolder.peek());
+        user.setName(DataSourceContextHolder.getDataSource());
         save(user);
     }
 
     @Override
-    @DS("ds2")
+    @DataSource(DataSourceEnum.DS2)
     public void save2(User user) {
-        user.setName(DynamicDataSourceContextHolder.peek());
+        user.setName(DataSourceContextHolder.getDataSource());
         save(user);
     }
 }
